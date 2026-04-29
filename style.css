@@ -1163,3 +1163,413 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--dark); }
     ::-webkit-scrollbar-thumb { background: rgba(200,255,0,0.3); }
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE STYLES — Tablet, Mobile, All Screen Sizes
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── TABLET: max 1024px ─── */
+@media (max-width: 1024px) {
+  nav {
+    padding: 0 24px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  #capabilities {
+    padding: 80px 32px;
+  }
+
+  .cap-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cap-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cap-desc {
+    margin-left: 0;
+  }
+
+  #stats {
+    padding: 60px 32px;
+  }
+
+  .stat-item {
+    padding: 32px 24px;
+  }
+
+  #insights {
+    padding: 80px 32px;
+  }
+
+  .insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #about {
+    padding: 80px 32px;
+  }
+
+  .about-inner {
+    gap: 48px;
+  }
+
+  #contact {
+    padding: 80px 32px;
+  }
+
+  .contact-inner {
+    gap: 48px;
+  }
+
+  footer {
+    padding: 48px 32px 28px;
+  }
+
+  .tools-header {
+    padding: 0 32px;
+  }
+}
+
+/* ─── SMALL TABLET / LARGE MOBILE: max 768px ─── */
+@media (max-width: 768px) {
+
+  /* NAV — hide links, show hamburger */
+  nav {
+    padding: 0 20px;
+    height: 56px;
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    z-index: 99;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 24px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  /* Hamburger button */
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    padding: 8px;
+    transition: border-color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .nav-hamburger:hover {
+    border-color: var(--lime);
+  }
+
+  .nav-hamburger span {
+    display: block;
+    height: 1.5px;
+    background: var(--text-dim);
+    transition: transform 0.25s, opacity 0.25s;
+  }
+
+  .nav-hamburger.active span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-hamburger.active span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  .theme-dropdown-wrap {
+    margin-left: 8px;
+  }
+
+  /* HERO */
+  #hero {
+    padding: 90px 20px 72px;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 9vw, 56px);
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  /* CAPABILITIES */
+  #capabilities {
+    padding: 64px 20px;
+  }
+
+  .cap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cap-card {
+    padding: 28px 20px 24px;
+  }
+
+  /* STATS */
+  #stats {
+    padding: 48px 20px;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item {
+    padding: 28px 20px;
+  }
+
+  .stat-num {
+    font-size: 44px;
+  }
+
+  /* INSIGHTS */
+  #insights {
+    padding: 64px 20px;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ABOUT */
+  #about {
+    padding: 64px 20px;
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-img {
+    height: 240px;
+  }
+
+  /* CONTACT */
+  #contact {
+    padding: 64px 20px;
+  }
+
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-left h2 {
+    font-size: 30px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* TOOLS */
+  #tools {
+    padding: 48px 0 64px;
+  }
+
+  .tools-header {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+
+  .tools-categories {
+    padding: 0 20px;
+    gap: 18px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 20px 24px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .footer-social-col {
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+/* ─── MOBILE: max 480px ─── */
+@media (max-width: 480px) {
+  nav {
+    padding: 0 16px;
+  }
+
+  #hero {
+    padding: 80px 16px 64px;
+  }
+
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 10vw, 48px);
+  }
+
+  .hero-subtitle {
+    font-size: 12.5px;
+    margin: 18px auto 30px;
+  }
+
+  .btn-primary {
+    padding: 13px 24px;
+    font-size: 11px;
+  }
+
+  #capabilities {
+    padding: 56px 16px;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+
+  .cap-card {
+    padding: 24px 16px 20px;
+  }
+
+  .cap-card h3 {
+    font-size: 14px;
+  }
+
+  #stats {
+    padding: 40px 16px;
+  }
+
+  .stat-num {
+    font-size: 40px;
+  }
+
+  #insights {
+    padding: 56px 16px;
+  }
+
+  .insight-img {
+    height: 160px;
+  }
+
+  #about {
+    padding: 56px 16px;
+  }
+
+  .about-intro {
+    font-size: 13px;
+  }
+
+  .about-img {
+    height: 200px;
+  }
+
+  #contact {
+    padding: 56px 16px;
+  }
+
+  .contact-left h2 {
+    font-size: 26px;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-size: 14px; /* prevent iOS zoom */
+    padding: 11px 12px;
+  }
+
+  footer {
+    padding: 36px 16px 20px;
+  }
+
+  .tools-header {
+    padding: 0 16px;
+  }
+
+  .tools-categories {
+    padding: 0 16px;
+    gap: 14px;
+  }
+
+  .theme-dropdown-btn {
+    padding: 5px 9px 5px 8px;
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  #themeLabel {
+    display: none; /* icon-only on small phones */
+  }
+}
+
+/* ─── VERY SMALL MOBILE: max 360px ─── */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .cap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-num {
+    font-size: 36px;
+  }
+
+  .contact-left h2 {
+    font-size: 22px;
+  }
+}
+
+
+/* Hide hamburger on desktop, show only on mobile */
+.nav-hamburger {
+  display: none;
+}
