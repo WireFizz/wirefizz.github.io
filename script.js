@@ -265,3 +265,31 @@
         console.error('EmailJS error:', err);
       });
   });
+/* ─── MOBILE NAV HAMBURGER ─── */
+const navHamburger = document.getElementById('navHamburger');
+const navLinks     = document.getElementById('navLinks');
+
+if (navHamburger && navLinks) {
+  navHamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = navLinks.classList.toggle('open');
+    navHamburger.classList.toggle('active', isOpen);
+    navHamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navHamburger.classList.remove('active');
+      navHamburger.setAttribute('aria-expanded', false);
+    });
+  });
+
+  // Close menu on outside click
+  document.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navHamburger.classList.remove('active');
+    navHamburger.setAttribute('aria-expanded', false);
+  });
+}
