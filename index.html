@@ -23,7 +23,7 @@
     <img src="logo.png" alt="Logo" height="45">
 
 
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#capabilities">Expertise</a></li>
       <li><a href="#insights">AI Lens</a></li>
       <li><a href="#about">About Us</a></li>
@@ -31,6 +31,7 @@
       <li><a href="#contact">Connect</a></li>
     </ul>
 
+    <div style="display:flex;align-items:center;gap:10px;">
     <div class="theme-dropdown-wrap" id="themeDropdownWrap">
       <button class="theme-dropdown-btn" id="themeDropdownBtn" aria-haspopup="true" aria-expanded="false">
         <span id="themeIcon">🌙</span>
@@ -41,6 +42,10 @@
         <li class="theme-option active" data-theme="dark" role="menuitem"><span>🌙</span> Dark</li>
         <li class="theme-option" data-theme="light" role="menuitem"><span>☀️</span> Light</li>
       </ul>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     </div>
   </nav>
 
